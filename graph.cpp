@@ -34,13 +34,20 @@ bool unstable_remove(
     return true;
 }
 
+int Graph::adj_idx(Node node)
+{
+    return node.level * (this->m+1) + node.stelae;
+}
+
 Graph::Graph(int layers, int stelae, int inter)
 {
     n = layers;
     m = stelae;
     k = inter;
 
-    number_nodes = n*m + 2;
+    number_nodes = (n+2)*(m+1);
+
+    adj = new list<Node>[number_nodes];
 
     //adj = new unordered_map<Node, vector<Node*>>();
 }
@@ -70,11 +77,17 @@ void Graph::add_edge(Node v, Node u)
     //this->add_node(v);
     //this->add_node(u);
 
+    this->neighbours(v)->push_back(u);
+    this->neighbours(u)->push_back(v);
+    this->neighbours(v)->rbegin()->inverse_edge = std::next(this->neighbours(u)->rbegin()).base();
+    this->neighbours(u)->rbegin()->inverse_edge = std::next(this->neighbours(v)->rbegin()).base();
+
+    /*
     this->adj[v].push_back(u);
     //this->degrees[v] = this->degrees[v]+1;
     this->adj[u].push_back(v);
     this->adj[v].rbegin()->inverse_edge = std::next(this->adj[u].rbegin()).base();
-    this->adj[u].rbegin()->inverse_edge = std::next(this->adj[v].rbegin()).base();
+    this->adj[u].rbegin()->inverse_edge = std::next(this->adj[v].rbegin()).base();*/
     //this->degrees[u] = this->degrees[u]+1;
 }
 
@@ -117,20 +130,20 @@ const Node* Graph::add_node(Node node)
 
 list<Node>* Graph::neighbours(Node node)
 {
-    return &(this->adj[node]);
+    return &(this->adj[this->adj_idx(node)]);
 }
 
 Graph* Graph::copy()
 {
     Graph* copy = new Graph(this->n, this->m, this->k);
 
-    for (auto v : this->adj)
+    /*for (auto v : this->adj)
     {
         for (auto u : v.second)
         {
             copy->add_edge(v.first, u);
         }
-    }
+    }*/
     //copy->degrees = unordered_map<Node, int>(this->degrees);
     //copy->nodes = unordered_set<Node>(this->nodes);
 
@@ -139,7 +152,7 @@ Graph* Graph::copy()
 
 void Graph::print_adj(ostream &output)
 {
-    for (auto& pair : this->adj) {
+    /*for (auto& pair : this->adj) {
         auto node = pair.first;
         output << "(" << node.level << ", " << node.stelae << ") => ";
         for (auto& neigh : pair.second) {
@@ -147,7 +160,7 @@ void Graph::print_adj(ostream &output)
         }
 
         output << endl;
-    }
+    }*/
 }
 
 string Graph::to_string()

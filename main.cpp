@@ -177,7 +177,7 @@ void solve_testcase(istream& input)
 
     for (auto node : *solution1)
     {
-        cout << node.level << " " << node.stelae << endl;
+        cout << node.level << " " << node.stelae << "\n";
     }
 
     delete graph;
@@ -195,7 +195,7 @@ void solve_testcase(istream& input)
 
     for (auto node : *solution2)
     {
-        cout << node.level << " " << node.stelae << endl;
+        cout << node.level << " " << node.stelae << "\n";
     }
 
     delete graph2;

@@ -19,7 +19,8 @@ class Graph {
         int n = 0, m = 0, k = 0;
         int number_nodes;
 
-        unordered_map<Node, list<Node> > adj;
+        //unordered_map<Node, list<Node> > adj;
+        list<Node>* adj;
         unordered_map<Node, int> degrees;
         //unordered_set<Node> nodes;
 
@@ -41,6 +42,8 @@ class Graph {
         void remove_edge(list<Node>::iterator v, Node u, list<Node>* nbrs);
 
         void print_adj(ostream &output = cout);
+
+        int adj_idx(Node node);
 
         string to_string();
 
