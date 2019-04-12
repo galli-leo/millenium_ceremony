@@ -47,7 +47,7 @@ Graph::Graph(int layers, int stelae, int inter)
 
     number_nodes = (n+2)*(m+1);
 
-    adj = new list<Node>[number_nodes];
+    adj = new vector<Node>[number_nodes];
 
     //adj = new unordered_map<Node, vector<Node*>>();
 }
@@ -79,8 +79,8 @@ void Graph::add_edge(Node v, Node u)
 
     this->neighbours(v)->push_back(u);
     this->neighbours(u)->push_back(v);
-    this->neighbours(v)->rbegin()->inverse_edge = std::next(this->neighbours(u)->rbegin()).base();
-    this->neighbours(u)->rbegin()->inverse_edge = std::next(this->neighbours(v)->rbegin()).base();
+    //this->neighbours(v)->rbegin()->inverse_edge = std::next(this->neighbours(u)->rbegin()).base();
+    //this->neighbours(u)->rbegin()->inverse_edge = std::next(this->neighbours(v)->rbegin()).base();
 
     /*
     this->adj[v].push_back(u);
@@ -91,21 +91,21 @@ void Graph::add_edge(Node v, Node u)
     //this->degrees[u] = this->degrees[u]+1;
 }
 
-void Graph::remove_edge(Node v, Node u, list<Node>* nbrs = nullptr)
+void Graph::remove_edge(Node v, Node u, vector<Node>* nbrs = nullptr)
 {
     if (nbrs == nullptr) nbrs = this->neighbours(v);
     this->remove_edge(find(nbrs->begin(), nbrs->end(), v), u, nbrs);
 }
 
-void Graph::remove_edge(list<Node>::iterator v, Node u, list<Node>* nbrs = nullptr) 
+void Graph::remove_edge(vector<Node>::iterator v, Node u, vector<Node>* nbrs = nullptr) 
 {
     Node v_node = *v;
     if (nbrs == nullptr) nbrs = this->neighbours(v_node);
     //unstable_remove<Node>(nbrs, v);
     nbrs->erase(v);
     auto other_nbrs = this->neighbours(v_node);
-    other_nbrs->erase(v_node.inverse_edge);
-    //other_nbrs->erase(find(other_nbrs->begin(), other_nbrs->end(), u));
+    //other_nbrs->erase(v_node.inverse_edge);
+    other_nbrs->erase(find(other_nbrs->begin(), other_nbrs->end(), u));
     //unstable_remove<Node>(other_nbrs, find(other_nbrs->begin(), other_nbrs->end(), u));
     //this->degrees[v_node] = this->degrees[v_node]-1;
     //this->degrees[u] = this->degrees[u]-1;
@@ -128,7 +128,7 @@ const Node* Graph::add_node(Node node)
     return nullptr;
 }
 
-list<Node>* Graph::neighbours(Node node)
+vector<Node>* Graph::neighbours(Node node)
 {
     return &(this->adj[this->adj_idx(node)]);
 }
@@ -136,6 +136,8 @@ list<Node>* Graph::neighbours(Node node)
 Graph* Graph::copy()
 {
     Graph* copy = new Graph(this->n, this->m, this->k);
+
+    std::copy(&this->adj[0], &this->adj[0]+this->number_nodes, &copy->adj[0]);
 
     /*for (auto v : this->adj)
     {

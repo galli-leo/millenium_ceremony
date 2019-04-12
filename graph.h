@@ -20,7 +20,7 @@ class Graph {
         int number_nodes;
 
         //unordered_map<Node, list<Node> > adj;
-        list<Node>* adj;
+        vector<Node>* adj;
         unordered_map<Node, int> degrees;
         //unordered_set<Node> nodes;
 
@@ -33,13 +33,13 @@ class Graph {
         const Node* add_node(Node node);
         const Node* add_node(int level, int stelae);
 
-        list<Node>* neighbours(Node node);
+        vector<Node>* neighbours(Node node);
         int degree(Node node);
 
         void add_edge(Node v, Node u);
 
-        void remove_edge(Node v, Node u, list<Node>* nbrs);
-        void remove_edge(list<Node>::iterator v, Node u, list<Node>* nbrs);
+        void remove_edge(Node v, Node u, vector<Node>* nbrs);
+        void remove_edge(vector<Node>::iterator v, Node u, vector<Node>* nbrs);
 
         void print_adj(ostream &output = cout);
 

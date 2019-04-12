@@ -62,9 +62,9 @@ vector<Node>* ceremony_tour(Graph* graph, Node source, int level, int player)
     {
         if (current.stelae == -1) current = source;
 
-        list<Node>* neighbours = graph->neighbours(current);
+        auto neighbours = graph->neighbours(current);
         
-        list<Node>::iterator next = neighbours->begin();
+        auto next = neighbours->begin();
 
         int ideal_v = weird_mod(current.stelae + current.direction(level, player), graph->m);
 

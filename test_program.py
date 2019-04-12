@@ -74,6 +74,6 @@ for path in paths:
         for e in p:
             G.add_edge(e[0], e[1])
 
-        #util.draw_graph_path_animated(G, p, "./solution_program_{0}_player_{1}.gif".format(i, player), n, m, k)
+        util.draw_graph_path_animated(G, p, "./solution_program_{0}_player_{1}.gif".format(i, player), n, m, k)
     i += 1
 

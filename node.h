@@ -58,7 +58,7 @@ struct Node {
 
     int level = -1;
     int stelae = -1;
-    list<Node>::iterator inverse_edge;
+    vector<Node>::iterator inverse_edge;
 };
 
 inline bool operator==(const Node& lhs, const Node& rhs)
