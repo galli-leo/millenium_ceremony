@@ -1,0 +1,8 @@
+venv/
+*.pyc
+main
+submit
+submit*.cpp*
+__pycache__
+main.dSYM
+milennium_ceremony
