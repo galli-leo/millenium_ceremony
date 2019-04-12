@@ -9,10 +9,10 @@
 
 using namespace std;
 
-list<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
+vector<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
 {
     //int solution_size = (graph->m)*((graph->n*graph->k) - (graph->k+graph->n+2));
-    list<Node>* solution = new list<Node>();
+    vector<Node>* solution = new vector<Node>();
 
     for (int l = 0; l < graph->n + 1; l++)
     {
@@ -28,16 +28,16 @@ list<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
         }
         else
         {
-            auto end = solution->rend();
-            for (auto it = solution->rbegin(); it != end; ++it)
+            //auto end = solution->rend();
+            for (int i = solution->size() - 1; i >= 0; i--)
             {
-                Node v1 = *it;
+                Node v1 = solution->at(i);
 
                 if (v1.level == l && graph->neighbours(v1)->size() > 0)
                 {
                     auto path = ceremony_tour(graph, v1, l, player);
 
-                    solution->insert(it.base(), path->begin(), path->end());
+                    solution->insert(solution->begin() + i + 1, path->begin(), path->end());
                 }
             }
         }
@@ -45,14 +45,14 @@ list<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
 
     if (euler != nullptr)
     {
-        auto end = solution->rend();
-        for (auto it = solution->rbegin(); it != end; ++it)
+        //auto end = solution->rend();
+        for (int i = solution->size() - 1; i >= 0; i--)
         {
-            Node v1 = *it;
+            Node v1 = solution->at(i);
 
             if (euler->neighbours(v1)->size() > 0)
             {
-                list<Node>* path = eulerian_tour(euler, v1);
+                auto path = eulerian_tour(euler, v1);
 
                 Node next = *path->begin();
 
@@ -65,7 +65,7 @@ list<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
                     beginning = std::next(beginning);
                 }
 
-                solution->insert(it.base(), beginning, path->end());
+                solution->insert(solution->begin() + i + 1, beginning, path->end());
             }
         }
     }

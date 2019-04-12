@@ -9,12 +9,12 @@ using namespace std;
 
 int weird_mod(int stelae, int m);
 
-list<Node>* eulerian_tour(Graph* graph, Node source);
+vector<Node>* eulerian_tour(Graph* graph, Node source);
 
 /**
  * Ceremony tour
  */
-list<Node>* ceremony_tour(Graph* graph, Node source, int level, int player);
+vector<Node>* ceremony_tour(Graph* graph, Node source, int level, int player);
 
 #define NIL 0 
 #define INF 2147483647 

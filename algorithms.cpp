@@ -12,9 +12,9 @@ using namespace std;
 #include <iostream>
 #include <vector>
 
-list<Node>* eulerian_tour(Graph* graph, Node source)
+vector<Node>* eulerian_tour(Graph* graph, Node source)
 {
-    list<Node>* path = new list<Node>();
+    vector<Node>* path = new vector<Node>();
 
     stack<Node> stack;
     stack.push(source);
@@ -52,9 +52,9 @@ int weird_mod(int stelae, int m)
     return ((stelae - 1) % m + m) % m + 1;
 }
 
-list<Node>* ceremony_tour(Graph* graph, Node source, int level, int player)
+vector<Node>* ceremony_tour(Graph* graph, Node source, int level, int player)
 {
-    list<Node>* path = new list<Node>();
+    vector<Node>* path = new vector<Node>();
 
     Node current;
 
