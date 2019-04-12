@@ -71,13 +71,16 @@ list<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
     return solution;
 }
 
-pair<Graph*, Graph*> read_graph(istream& input, int n, int m, int k)
+pair<pair<Graph*, Graph*>, pair<Graph*, Graph*>> read_graph(istream& input, int n, int m, int k)
 {
     Graph* graph = new Graph(n, m, k);
+    Graph* graph2 = new Graph(n, m, k);
     Graph* euler = nullptr;
+    Graph* euler2 = nullptr;
     if (k > 1) 
     {
         euler = new Graph(n, m, k-1);
+        euler2 = new Graph(n, m, k-1);
     }
 
     Node altar = Node(0, 0);
@@ -103,9 +106,11 @@ pair<Graph*, Graph*> read_graph(istream& input, int n, int m, int k)
                 else
                 {
                     graph->add_edge(Node(l, s), Node(l+1, other_s));
+                    graph2->add_edge(Node(l, s), Node(l+1, other_s));
                 }
             }
             graph->add_edge(Node(l, s), Node(l, weird_mod(s + 1, m)));
+            graph2->add_edge(Node(l, s), Node(l, weird_mod(s + 1, m)));
         }
         if (k > 1)
         {
@@ -123,10 +128,12 @@ pair<Graph*, Graph*> read_graph(istream& input, int n, int m, int k)
                     if (other_s == matched)
                     {
                         graph->add_edge(Node(l, s), Node(l+1, other_s));
+                        graph2->add_edge(Node(l, s), Node(l+1, other_s));
                     }
                     else
                     {
                         euler->add_edge(Node(l, s), Node(l+1, other_s));
+                        euler2->add_edge(Node(l, s), Node(l+1, other_s));
                     }
                 }
             }
@@ -137,9 +144,12 @@ pair<Graph*, Graph*> read_graph(istream& input, int n, int m, int k)
         graph->add_edge(altar, Node(1, s));
         graph->add_edge(Node(n, s), torch);
         graph->add_edge(Node(n, s), Node(n, weird_mod(s + 1, m)));
+        graph2->add_edge(altar, Node(1, s));
+        graph2->add_edge(Node(n, s), torch);
+        graph2->add_edge(Node(n, s), Node(n, weird_mod(s + 1, m)));
     }
 
-    return make_pair(graph, euler);
+    return make_pair(make_pair(graph, euler), make_pair(graph2, euler2));
 }
 
 void solve_testcase(istream& input)
@@ -152,18 +162,14 @@ void solve_testcase(istream& input)
     //cout << "Variables: " << n << " " << m << " " << k << endl;
 
     auto graphs = read_graph(input, n, m, k);
-    Graph* graph = graphs.first;
+    Graph* graph = graphs.first.first;
     //cout << "Graph:" << endl;
     //graph->print_adj();
-    Graph* euler = graphs.second;
+    Graph* euler = graphs.first.second;
     //cout << "Euler:" << endl;
     //euler->print_adj();
-    Graph* euler2 = nullptr;
-    if (k > 1)
-    {
-        euler2 = euler->copy();
-    }
-    Graph* graph2 = graph->copy();
+    Graph* euler2 = graphs.second.second;
+    Graph* graph2 = graphs.second.first;
 
     auto solution1 = solve_graph(graph, euler);
 
@@ -173,9 +179,14 @@ void solve_testcase(istream& input)
     }
 
     delete graph;
-    delete euler;
+    if (euler != nullptr)
+    {
+        delete euler;
+    }
+
 #if LOCAL
     cout << "Solution 2:" << endl;
+    graph2->print_adj();
 #endif
 
     auto solution2 = solve_graph(graph2, euler2, 2);
@@ -186,7 +197,10 @@ void solve_testcase(istream& input)
     }
 
     delete graph2;
-    delete euler2;
+    if (euler2 != nullptr)
+    {
+        delete euler2; 
+    }
 }
 
 void solve(istream& input)

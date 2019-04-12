@@ -10,7 +10,7 @@ import main
 program = ["./submit"]
 
 print("[*] Generating random test case...")
-n, m, k = 3, 6, 1
+n, m, k = 1000, 14, 5
 (G, pos) = test.create_random_test(n, m, k)
 testcase = test.random_test_to_str(G, n, m, k)
 print("[*] Random Test Case:")

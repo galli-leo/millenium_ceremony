@@ -139,14 +139,15 @@ Graph* Graph::copy()
 
 void Graph::print_adj(ostream &output)
 {
-    /*for (auto& node : this->nodes) {
+    for (auto& pair : this->adj) {
+        auto node = pair.first;
         output << "(" << node.level << ", " << node.stelae << ") => ";
-        for (auto& neigh : this->adj[node]) {
+        for (auto& neigh : pair.second) {
             output << "(" << neigh.level << ", " << neigh.stelae << "), ";
         }
 
         output << endl;
-    }*/
+    }
 }
 
 string Graph::to_string()
