@@ -28,7 +28,8 @@ list<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
         }
         else
         {
-            for (auto it = solution->rbegin(); it != solution->rend(); ++it)
+            auto end = solution->rend();
+            for (auto it = solution->rbegin(); it != end; ++it)
             {
                 Node v1 = *it;
 
@@ -44,7 +45,8 @@ list<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
 
     if (euler != nullptr)
     {
-        for (auto it = solution->rbegin(); it != solution->rend(); ++it)
+        auto end = solution->rend();
+        for (auto it = solution->rbegin(); it != end; ++it)
         {
             Node v1 = *it;
 
