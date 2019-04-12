@@ -12,10 +12,8 @@ using namespace std;
 static int parseint(void)
 {
     int c, n;
-
-    
-
     n = getchar_unlocked() - '0';
+    if (n > 9 || n < 0) n = 0;
     while ((c = getchar_unlocked()) >= '0')
         n = 10*n + c-'0';
 
@@ -24,6 +22,12 @@ static int parseint(void)
 
 static void printint(int n)
 {
+    if (n == 0) 
+    {
+        putchar_unlocked('0');
+        return;
+    }
+
     int buf[10];
     int i = 0;
     while (n > 0) {
@@ -101,7 +105,11 @@ vector<Node>* solve_graph(Graph* graph, Graph* euler, int player = 1)
 
     for (auto node : solution)
     {
-        printf("%d %d\n", node.level, node.stelae);
+        printint(node.level);
+        putchar_unlocked(' ');
+        printint(node.stelae);
+        putchar_unlocked('\n');
+        //printf("%d %d\n", node.level, node.stelae);
         //cout << node.level << " " << node.stelae << "\n";
     }
 
@@ -141,8 +149,8 @@ pair<Graph*, Graph*> read_graph(istream& input, int n, int m, int k)
                 //euler2->adj[graph->adj_idx(Node(l, s))].reserve((k)*2);
             }
             for (int r = 0; r < k; r++) {
-                int other_s;// = parseint();
-                input >> other_s;
+                int other_s = parseint();
+                //input >> other_s;
                 if (k > 1)
                 {
                     matcher.addEdge(s, other_s);
@@ -260,7 +268,7 @@ void solve(istream& input)
 int main() 
 {
     #ifdef LOCAL
-    ifstream infile("testcase.txt");
+    ifstream infile("test1.in.txt");
     solve(infile);
     #else
     solve(cin);

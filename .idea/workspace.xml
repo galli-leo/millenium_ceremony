@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="be94ecff-c3b1-4790-9ddd-5be9d55ab4dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graph.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/graph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node.h" beforeDir="false" afterPath="$PROJECT_DIR$/node.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution_program_1_player_1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/solution_program_1_player_1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution_program_1_player_2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/solution_program_1_player_2.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_program.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase.txt" afterDir="false" />
     </list>
@@ -400,12 +395,12 @@
       <workItem from="1554552525105" duration="629000" />
       <workItem from="1554745038844" duration="730000" />
       <workItem from="1554883502229" duration="30290000" />
-      <workItem from="1554997722848" duration="11335000" />
+      <workItem from="1554997722848" duration="12142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106170000" />
+    <option name="totallyTimeSpent" value="106977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="3440" height="1379" extended-state="0" />
@@ -416,7 +411,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27039626" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.57653457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993784" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -442,7 +437,7 @@
     <SUITE FILE_PATH="coverage/millenium_ceremony$main.coverage" NAME="main Coverage Results" MODIFIED="1554912497557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/millenium_ceremony$submit_edited_py.coverage" NAME="submit_edited.py Coverage Results" MODIFIED="1554916994199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/millenium_ceremony$test.coverage" NAME="test Coverage Results" MODIFIED="1554989995081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/millenium_ceremony$test_program.coverage" NAME="test_program Coverage Results" MODIFIED="1555082631442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/millenium_ceremony$test_program.coverage" NAME="test_program Coverage Results" MODIFIED="1555084869137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

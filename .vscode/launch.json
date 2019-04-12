@@ -18,6 +18,12 @@
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/main",
+            "terminal": "integrated",
+            "stdio" : {
+                "stdin" : "testcase.txt",
+                "stdout" : null,
+                "stderr" : null
+            },
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "make debug"

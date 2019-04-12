@@ -6,7 +6,7 @@ headers := $(wildcard *.h)
 targets := $(source) $(headers)
 
 debug: $(targets)
-	g++ -o main -Wall -g -DLOCAL=1 -lm -std=c++11 $(source)
+	g++ -o main -Wall -g -lm -std=c++11 $(source)
 
 release: $(targets)
 	g++ -o main -Wall -lm -O2 -std=c++11 -pipe $(source)
