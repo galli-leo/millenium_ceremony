@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be94ecff-c3b1-4790-9ddd-5be9d55ab4dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_program.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcase.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +88,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="145">
               <caret line="12" column="14" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="14" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -118,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/testcase.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <caret line="13988" selection-start-line="13988" selection-end-line="13988" />
             </state>
           </provider>
         </entry>
@@ -366,9 +361,9 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.submit_edited.py" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.test_program" />
-      <item itemvalue="Python.submit_edited.py" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -395,23 +390,22 @@
       <workItem from="1554552525105" duration="629000" />
       <workItem from="1554745038844" duration="730000" />
       <workItem from="1554883502229" duration="30290000" />
-      <workItem from="1554997722848" duration="12142000" />
+      <workItem from="1554997722848" duration="12435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106977000" />
+    <option name="totallyTimeSpent" value="107270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="3440" height="1379" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09888169" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.57653457" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.57653457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993784" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -703,7 +697,7 @@
     <entry file="file://$PROJECT_DIR$/testcase.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <caret line="13988" selection-start-line="13988" selection-end-line="13988" />
         </state>
       </provider>
     </entry>
@@ -736,7 +730,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="145">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="14" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
